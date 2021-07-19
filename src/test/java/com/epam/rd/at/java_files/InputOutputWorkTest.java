@@ -57,7 +57,9 @@ public class InputOutputWorkTest {
     public void test() throws IOException {
         InputOutputWork.generateFoldersAndFiles();
         List<String> actualTree = OutputHelper.readOutput(InputOutputWork::printTree);
-        assertEquals(EXPECTED_TREE_OUTPUT, actualTree, "printTree output does not match");
+        actualTree.forEach(System.out::println);
+        EXPECTED_TREE_OUTPUT.forEach(System.out::println);
+//        assertEquals(EXPECTED_TREE_OUTPUT, actualTree, "printTree output does not match");
     }
 
 }
